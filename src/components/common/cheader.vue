@@ -10,6 +10,7 @@
 
 <script>
 import Bus from '../../bus.js'
+import {ApiService} from '../../axios/api.js'
 export default {
   name: 'cheader',
   data () {
@@ -23,6 +24,9 @@ export default {
       this.isBoolean = !this.isBoolean
       Bus.$emit('val', this.isBoolean)
     }
+  },
+  mounted () {
+    ApiService.getUser({id: 1})
   }
 }
 </script>
